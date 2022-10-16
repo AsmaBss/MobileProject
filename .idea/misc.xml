@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/drawable-xhdpi/forget.xml" value="0.2385" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/drawable/button.xml" value="0.2" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/drawable/cart_background.xml" value="0.2595" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/drawable/cat_background.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/drawable/orange_light_banner.xml" value="0.2585" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/drawable/search_background.xml" value="0.2595" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/drawable/top_background.xml" value="0.2595" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/drawable/viewholder_popular.xml" value="0.2595" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_ajouterproduit.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_detaillesproduit.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_intro.xml" value="0.16" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_login.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_ordercomplete.xml" value="0.2" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_panier.xml" value="0.264" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_profile.xml" value="0.2" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_reviewproduit.xml" value="0.2" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/activity_user_details.xml" value="0.264" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/viewholder_category.xml" value="0.4" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/viewholder_panierproduit.xml" value="0.4" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/viewholder_popular.xml" value="0.4" />
+        <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.133" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
