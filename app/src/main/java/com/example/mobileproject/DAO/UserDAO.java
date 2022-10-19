@@ -19,5 +19,6 @@ public interface UserDAO {
     List<User> getAll();
     @Query("DELETE FROM user")
     void deleteAll();
-
+    @Query("SELECT * FROM user WHERE email =:email AND password=:password")
+    User getUser(String email, String password);
 }

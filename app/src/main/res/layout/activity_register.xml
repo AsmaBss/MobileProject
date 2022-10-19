@@ -107,8 +107,19 @@
                 android:inputType="textPersonName"
                 android:paddingStart="40dp"
                 android:paddingEnd="40dp"
-                app:layout_constraintBottom_toTopOf="@+id/loginBtn"
                 />
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/forget"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="textPersonName"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/registerBtn"
