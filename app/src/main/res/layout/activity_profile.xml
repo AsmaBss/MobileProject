@@ -39,7 +39,8 @@
                     android:id="@+id/imageUser"
                     android:layout_width="111dp"
                     android:layout_height="96dp"
-                    tools:srcCompat="@drawable/avatar" />
+                    tools:srcCompat="@drawable/avatar"
+                    tools:ignore="MissingConstraints" />
 
                 <TextView
                     android:id="@+id/username"

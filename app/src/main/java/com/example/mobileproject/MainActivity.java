@@ -18,6 +18,7 @@ import com.example.mobileproject.Domain.CategoryDomain;
 import com.example.mobileproject.Domain.ProductDomain;
 import com.example.mobileproject.Entities.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -36,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewPopular();
         //nav_ajouterproduit
         nav_ajouterproduit=findViewById(R.id.nav_ajouterproduit);
+        //
+        //get User
         user_label=findViewById(R.id.userlabel);
         User user=new User();
         Intent intent = getIntent();
-        //
         user= (User) intent.getSerializableExtra("user");
+        user_label.setText("Welcome "+user.getFirstname()+" "+user.getLastname());
         //
-        user_label.setText(user.getFirstname());
-
         nav_ajouterproduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +58,10 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                User user=new User();
+                user= (User) intent.getSerializableExtra("user");
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class)
+                        .putExtra("user", (Serializable) user));
             }
         });
     }
