@@ -60,32 +60,37 @@
                 app:layout_constraintBottom_toTopOf="@+id/nom_produit"
                 tools:layout_editor_absoluteX="30dp" />
 
-            <EditText
-                android:id="@+id/type_produit"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="350dp"
                 android:layout_height="51dp"
                 android:layout_marginBottom="24dp"
-                android:background="@drawable/forget"
-                android:ems="10"
-                android:hint="Type du produit"
-                android:inputType="textPersonName"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp"
-                app:layout_constraintBottom_toTopOf="@+id/type_produit" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Select Type"
+                android:inputType="none"
+                app:layout_constraintBottom_toTopOf="@+id/marque_produit" >
+                <AutoCompleteTextView
+                    android:id="@+id/type_produit"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    ></AutoCompleteTextView>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/marque_produit"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="350dp"
-                android:layout_height="50dp"
+                android:layout_height="51dp"
                 android:layout_marginBottom="24dp"
-                android:background="@drawable/forget"
-                android:ems="10"
-                android:hint="Marque du produit"
-                android:inputType="textPersonName"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp"
-                app:layout_constraintBottom_toTopOf="@+id/marque_produit" />
-
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Select Marque"
+                android:inputType="none"
+                app:layout_constraintBottom_toTopOf="@+id/couleur_produit" >
+                <AutoCompleteTextView
+                    android:id="@+id/marque_produit"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    ></AutoCompleteTextView>
+            </com.google.android.material.textfield.TextInputLayout>
             <EditText
                 android:id="@+id/couleur_produit"
                 android:layout_width="350dp"

@@ -36,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewPopular();
         //nav_ajouterproduit
         nav_ajouterproduit=findViewById(R.id.nav_ajouterproduit);
+        //
+        //get User
         user_label=findViewById(R.id.userlabel);
         User user=new User();
         Intent intent = getIntent();
-        //
         user= (User) intent.getSerializableExtra("user");
+        user_label.setText("Welcome "+user.getFirstname()+" "+user.getLastname());
         //
-        user_label.setText(user.getFirstname());
-
         nav_ajouterproduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
