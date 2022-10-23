@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.mobileproject.Database.AppDatabase;
 import com.example.mobileproject.Entities.User;
 
+import java.io.Serializable;
+
 public class LoginActivity extends AppCompatActivity {
     private ConstraintLayout loginBtn;
     private EditText email, password;
@@ -48,7 +50,8 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else{
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class)
-                                        .putExtra("email",user.getEmail()));
+                                        //.putExtra("email",user.getEmail()));
+                                        .putExtra("user", (Serializable) user));
                             }
                         }
                     }).start();

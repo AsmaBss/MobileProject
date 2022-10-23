@@ -10,11 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.mobileproject.Adaptor.CategoryAdaptor;
 import com.example.mobileproject.Adaptor.PopularAdaptor;
 import com.example.mobileproject.Domain.CategoryDomain;
 import com.example.mobileproject.Domain.ProductDomain;
+import com.example.mobileproject.Entities.User;
 
 import java.util.ArrayList;
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapterCategory, adapterPopular;
     private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     private ConstraintLayout nav_ajouterproduit;
+    private TextView user_label;
     private LinearLayout profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +36,22 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewPopular();
         //nav_ajouterproduit
         nav_ajouterproduit=findViewById(R.id.nav_ajouterproduit);
+        user_label=findViewById(R.id.userlabel);
+        User user=new User();
+        Intent intent = getIntent();
+        //
+        user= (User) intent.getSerializableExtra("user");
+        //
+        user_label.setText(user.getFirstname());
+
         nav_ajouterproduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, AjouterProduitActivity.class));
             }
         });
+        //userlabel text
+        //user_label.setText();
         // Profile
         profile = findViewById(R.id.profileBtn);
         profile.setOnClickListener(new View.OnClickListener() {

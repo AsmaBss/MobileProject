@@ -66,6 +66,18 @@
             android:layout_height="50dp"
             android:background="@drawable/button">
 
+            <ImageView
+                android:layout_width="49dp"
+                android:layout_height="38dp"
+                android:elevation="3dp"
+                android:src="@drawable/user"
+                app:backgroundTint="#ff5e00"
+                app:maxImageSize="30dp"
+                app:tint="#ffffff"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="9dp"></ImageView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,8 +86,10 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.693"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.562" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

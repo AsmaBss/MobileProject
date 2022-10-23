@@ -14,34 +14,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353"
-        app:srcCompat="@drawable/boutique" />
-
-    <TextView
-        android:id="@+id/appName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stocki"
-        android:textColor="@color/black"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/appLogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725" />
+        app:layout_constraintVertical_bias="0.163"
+        app:srcCompat="@drawable/icon" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appLogo">
+
+        <ImageView
+            android:layout_width="49dp"
+            android:layout_height="38dp"
+            android:elevation="3dp"
+            android:src="@drawable/user"
+            app:backgroundTint="#ff5e00"
+            app:maxImageSize="30dp"
+            app:tint="#ffffff"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="6dp"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +68,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login">
-
+        <ImageView
+            android:layout_width="49dp"
+            android:layout_height="38dp"
+            android:elevation="3dp"
+            android:src="@drawable/utilisateur"
+            app:backgroundTint="#ff5e00"
+            app:maxImageSize="30dp"
+            app:tint="#ffffff"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="6dp"></ImageView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
