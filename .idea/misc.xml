@@ -27,7 +27,19 @@
         <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/layout/viewholder_popular.xml" value="0.4" />
         <entry key="..\:/Users/HP/Desktop/MobileProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.133" />
         <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_ajouterproduit.xml" value="0.33" />
+<<<<<<< HEAD
         <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_intro.xml" value="0.17831813576494426" />
+=======
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_detaillesproduit.xml" value="0.25" />
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_intro.xml" value="0.33" />
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_ordercomplete.xml" value="0.14945652173913043" />
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_register.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_reviewproduit.xml" value="0.33" />
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/activity_user_details.xml" value="0.25" />
+        <entry key="..\:/Users/abdel/OneDrive/Bureau/Projects/Mobile/MobileProject/app/src/main/res/layout/list_types.xml" value="0.25" />
+>>>>>>> 69a7cc91a4b5bc994a1948ad2c14fe8ed095b155
       </map>
     </option>
   </component>
