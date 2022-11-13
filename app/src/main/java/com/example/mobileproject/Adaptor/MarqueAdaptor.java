@@ -13,28 +13,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobileproject.Domain.CategoryDomain;
+import com.example.mobileproject.Entities.Marque;
 import com.example.mobileproject.R;
 
 import java.util.ArrayList;
 
-public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.ViewHolder> {
-    ArrayList<CategoryDomain> categoryDomains;
+public class MarqueAdaptor extends RecyclerView.Adapter<MarqueAdaptor.ViewHolder> {
+    ArrayList<Marque> marques;
 
-    public CategoryAdaptor(ArrayList<CategoryDomain> categoryDomains) {
-        this.categoryDomains = categoryDomains;
+    public MarqueAdaptor(ArrayList<Marque> marques) {
+        this.marques = marques;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MarqueAdaptor.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_category, parent, false);
-        return new ViewHolder(inflate);
-        //return null;
+        return new MarqueAdaptor.ViewHolder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.categoryName.setText(categoryDomains.get(position).getTitle());
+    public void onBindViewHolder(@NonNull MarqueAdaptor.ViewHolder holder, int position) {
+        holder.categoryName.setText(marques.get(position).getNomMarque().name());
         String picUrl = "";
         switch (position){
             case 0 : {
@@ -72,7 +72,7 @@ public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.ViewHo
 
     @Override
     public int getItemCount() {
-        return categoryDomains.size();
+        return marques.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

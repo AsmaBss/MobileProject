@@ -1,12 +1,13 @@
 package com.example.mobileproject.Entities;
 
-import androidx.room.Entity;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Produit")
-public class Produit {
+import java.io.Serializable;
+
+@Entity(tableName = "produit")
+public class Produit implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name = "nom")
@@ -17,17 +18,17 @@ public class Produit {
     private String couleur;
     @ColumnInfo(name = "prix")
     private float prix;
+    @ColumnInfo(name = "Marque")
+    private MarqueEnum Marque;
     @ColumnInfo(name = "TypeProduit")
-    private TypeProduit TypeProduit;
+    private TypeProduitEnum TypeProduit;
     @ColumnInfo(name = "image")
     private String image;
-    @ColumnInfo(name = "Marque")
-    private Marque Marque;
 
     public Produit() {
     }
 
-    public Produit(String nom, String description, String couleur, float prix, com.example.mobileproject.Entities.TypeProduit typeProduit, String image, com.example.mobileproject.Entities.Marque marque) {
+    public Produit(String nom, String description, String couleur, float prix, TypeProduitEnum typeProduit, MarqueEnum marque) {
         this.nom = nom;
         this.description = description;
         this.couleur = couleur;
@@ -37,7 +38,7 @@ public class Produit {
         Marque = marque;
     }
 
-    public Produit(int id, String nom, String description, String couleur, float prix, com.example.mobileproject.Entities.TypeProduit typeProduit, String image, com.example.mobileproject.Entities.Marque marque) {
+    public Produit(int id, String nom, String description, String couleur, float prix, TypeProduitEnum typeProduit, String image, MarqueEnum marque) {
         this.id = id;
         this.nom = nom;
         this.description = description;
@@ -46,6 +47,13 @@ public class Produit {
         TypeProduit = typeProduit;
         this.image = image;
         Marque = marque;
+    }
+
+    public Produit(String nom, String description, String couleur, float prix) {
+        this.nom = nom;
+        this.description = description;
+        this.couleur = couleur;
+        this.prix = prix;
     }
 
     @Override
@@ -102,11 +110,11 @@ public class Produit {
         this.prix = prix;
     }
 
-    public com.example.mobileproject.Entities.TypeProduit getTypeProduit() {
+    public TypeProduitEnum getTypeProduit() {
         return TypeProduit;
     }
 
-    public void setTypeProduit(com.example.mobileproject.Entities.TypeProduit typeProduit) {
+    public void setTypeProduit(TypeProduitEnum typeProduit) {
         TypeProduit = typeProduit;
     }
 
@@ -118,11 +126,11 @@ public class Produit {
         this.image = image;
     }
 
-    public com.example.mobileproject.Entities.Marque getMarque() {
+    public MarqueEnum getMarque() {
         return Marque;
     }
 
-    public void setMarque(com.example.mobileproject.Entities.Marque marque) {
+    public void setMarque(MarqueEnum marque) {
         Marque = marque;
     }
 }

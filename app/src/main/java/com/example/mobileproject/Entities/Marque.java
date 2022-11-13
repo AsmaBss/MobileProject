@@ -9,18 +9,22 @@ public class Marque {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name = "NomMarque")
-    private String NomMarque;
+    private MarqueEnum NomMarque;
+    //private String NomMarque;
+    @ColumnInfo(name = "picMarque")
+    private String picMarque;
 
     public Marque() {
     }
 
-    public Marque(String nomMarque) {
+    public Marque(MarqueEnum nomMarque) {
         NomMarque = nomMarque;
     }
 
-    public Marque(int id, String nomMarque) {
+    public Marque(int id, MarqueEnum nomMarque, String picMarque) {
         this.id = id;
         NomMarque = nomMarque;
+        this.picMarque = picMarque;
     }
 
     @Override
@@ -39,11 +43,11 @@ public class Marque {
         this.id = id;
     }
 
-    public String getNomMarque() {
+    public MarqueEnum getNomMarque() {
         return NomMarque;
     }
 
-    public void setNomMarque(String nomMarque) {
+    public void setNomMarque(MarqueEnum nomMarque) {
         NomMarque = nomMarque;
     }
 }

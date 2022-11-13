@@ -14,15 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.mobileproject.Domain.CategoryDomain;
 import com.example.mobileproject.Domain.ProductDomain;
+import com.example.mobileproject.Entities.Produit;
 import com.example.mobileproject.R;
 
 import java.util.ArrayList;
 
 public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHolder> {
-    ArrayList<ProductDomain> productDomains;
+    ArrayList<Produit> produits;
 
-    public PopularAdaptor(ArrayList<ProductDomain> productDomains) {
-        this.productDomains = productDomains;
+    public PopularAdaptor(ArrayList<Produit> produits) {
+        this.produits = produits;
     }
 
     @NonNull
@@ -30,35 +31,35 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_popular, parent, false);
         return new ViewHolder(inflate);
-        //return null;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.prodName.setText(productDomains.get(position).getTitle());
-        holder.prodFee.setText(String.valueOf(productDomains.get(position).getFee()));
-
-        int drawbleRessourceId = holder.itemView.getContext().getResources().getIdentifier(productDomains.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
-        System.out.println(drawbleRessourceId);
-        Glide.with(holder.itemView.getContext())
-                .load(drawbleRessourceId)
-                .into(holder.prodPic);
+        holder.prodName.setText(produits.get(position).getNom());
+        holder.prodColor.setText("Couleur: " + produits.get(position).getCouleur());
+        holder.prodMarque.setText("Marque: " + produits.get(position).getMarque().name());
+        holder.prodType.setText("Type: " + produits.get(position).getTypeProduit().name());
+        holder.prodFee.setText(String.valueOf(produits.get(position).getPrix()));
     }
 
     @Override
     public int getItemCount() {
-        return productDomains.size();
+        return produits.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView prodName;
-        ImageView prodPic;
+        TextView prodColor;
+        TextView prodMarque;
+        TextView prodType;
         TextView prodFee;
         TextView addBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             prodName=itemView.findViewById(R.id.prodName);
-            prodPic=itemView.findViewById(R.id.prodPic);
+            prodColor=itemView.findViewById(R.id.prodColor);
+            prodMarque=itemView.findViewById(R.id.prodMarque);
+            prodType=itemView.findViewById(R.id.prodType);
             prodFee=itemView.findViewById(R.id.prodFee);
             addBtn=itemView.findViewById(R.id.addBtn);
         }

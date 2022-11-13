@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:background="@drawable/cart_background"
-    android:elevation="3dp">
+    android:elevation="3dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
 
     <TextView
         android:id="@+id/prodName"
@@ -17,49 +20,69 @@
         android:layout_marginBottom="50dp"
         android:shadowColor="#383C55"
         android:text="title"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/prodPic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/prodPic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prodName"
-        app:srcCompat="@drawable/cat_2" />
+    <TextView
+        android:id="@+id/prodColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="color"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/prodName"
+        app:layout_constraintStart_toStartOf="@+id/prodName"
+        app:layout_constraintTop_toBottomOf="@+id/prodName" />
+
+    <TextView
+        android:id="@+id/prodMarque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="marque"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/prodColor"
+        app:layout_constraintStart_toStartOf="@+id/prodColor"
+        app:layout_constraintTop_toBottomOf="@+id/prodColor" />
+
+    <TextView
+        android:id="@+id/prodType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="type"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/prodMarque"
+        app:layout_constraintStart_toStartOf="@+id/prodMarque"
+        app:layout_constraintTop_toBottomOf="@+id/prodMarque" />
 
     <TextView
         android:id="@+id/prodFee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
         android:shadowColor="#373b54"
         android:text="0.0"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/prodPic"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toStartOf="@+id/prodPic"
-        app:layout_constraintTop_toBottomOf="@+id/prodPic" />
+        app:layout_constraintBottom_toTopOf="@+id/addBtn"
+        app:layout_constraintEnd_toStartOf="@+id/dt"
+        app:layout_constraintStart_toStartOf="@+id/prodName"
+        app:layout_constraintTop_toBottomOf="@+id/prodType" />
 
     <TextView
         android:id="@+id/dt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
         android:text="DT"
         android:textColor="@color/orange"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/prodFee"
+        app:layout_constraintEnd_toEndOf="@+id/prodType"
         app:layout_constraintStart_toEndOf="@+id/prodFee"
         app:layout_constraintTop_toTopOf="@+id/prodFee" />
 
@@ -77,7 +100,7 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/prodPic"
-        app:layout_constraintStart_toStartOf="@+id/prodPic"
-        app:layout_constraintTop_toBottomOf="@+id/prodFee" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dt"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
