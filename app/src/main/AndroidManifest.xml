@@ -32,6 +32,9 @@
             android:name=".AjouterProduitActivity"
             android:exported="false" />
         <activity
+            android:name=".DetailProduitActivity"
+            android:exported="false" />
+        <activity
             android:name=".OrdercompleteActivity"
             android:exported="false" />
         <activity
