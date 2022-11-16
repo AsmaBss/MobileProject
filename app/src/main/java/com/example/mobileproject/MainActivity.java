@@ -29,7 +29,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private AppDatabase database;
-    private RecyclerView.Adapter adapterCategory, adapterPopular;
+    private RecyclerView.Adapter adapterCategory;
+    private RecyclerView.Adapter adapterPopular;
     private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     private ConstraintLayout nav_ajouterproduit;
     private TextView user_label;

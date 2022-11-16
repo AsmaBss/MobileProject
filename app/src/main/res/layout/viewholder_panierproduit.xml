@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_margin="5dp"
     android:background="@drawable/cart_background"
     android:elevation="3dp">
 
@@ -31,14 +31,15 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/prodColor" />
 
     <TextView
-        android:id="@+id/deleteBtn"
+        android:id="@+id/decreasequantité"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="84dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/button"
         android:paddingStart="10dp"
         android:paddingTop="3dp"
@@ -48,6 +49,8 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/Produit_Delete"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/addquantité"
         app:layout_constraintTop_toBottomOf="@+id/Produit_Description" />
 
     <TextView
@@ -67,10 +70,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/prodType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="50dp"
+        android:shadowColor="#383C55"
+        android:text="prodType"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/prodPic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <TextView
+        android:id="@+id/prodColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        android:shadowColor="#383C55"
+        android:text="ProdColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.685"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prodName" />
+
+    <TextView
+        android:id="@+id/prodMarque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        android:shadowColor="#383C55"
+        android:text="prodMarque"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toEndOf="@+id/prodPic"
+        app:layout_constraintTop_toBottomOf="@+id/prodName" />
+
     <ImageView
         android:id="@+id/prodPic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="73dp"
+        android:layout_height="81dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
@@ -107,10 +160,10 @@
         app:layout_constraintTop_toTopOf="@+id/prodFee" />
 
     <TextView
-        android:id="@+id/addBtn"
+        android:id="@+id/addquantité"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="64dp"
         android:background="@drawable/button"
         android:paddingStart="10dp"
         android:paddingTop="3dp"
@@ -120,16 +173,17 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/prodPic"
-        app:layout_constraintTop_toTopOf="@+id/deleteBtn" />
+        app:layout_constraintTop_toTopOf="@+id/decreasequantité" />
 
     <TextView
         android:id="@+id/Produit_Description"
         android:layout_width="148dp"
         android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="4dp"
         android:text="Produit_Description"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-        app:layout_constraintTop_toBottomOf="@+id/prodName" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Produit_Delete"
+        app:layout_constraintTop_toBottomOf="@+id/prodName"
+        app:layout_constraintVertical_bias="0.626" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
