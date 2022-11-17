@@ -43,8 +43,10 @@ public class PanierActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panier);
+        View rootView = getWindow().getDecorView().getRootView();
         //
         //Intent Store_Total = getIntent();
 
@@ -59,8 +61,8 @@ public class PanierActivity extends AppCompatActivity {
         CheckoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(new Intent(PanierActivity.this, OrdercompleteActivity.class));
+                createPdfFromView(rootView,"PanierPDF",1000,2500,1);
+               // startActivity(new Intent(PanierActivity.this, OrdercompleteActivity.class));
             }
         });
     }
@@ -80,5 +82,52 @@ public class PanierActivity extends AppCompatActivity {
         adapterPanier = new PanierAdaptor(produitspanier);
         recyclerViewPanierList.setAdapter(adapterPanier);
         Total.setText(PrixTot+" DT");
+    }
+    private void createPdfFromView(View view, String fileName, int pageWidth, int pageHeight, int pageNumber) {
+
+        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+        File file = new File(path, fileName.concat(".pdf"));
+
+        FileOutputStream fOut = null;
+        try {
+            fOut = new FileOutputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (file.exists()) {
+            PdfDocument document = new PdfDocument();
+            PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(pageWidth, pageHeight, pageNumber).create();
+            PdfDocument.Page page = document.startPage(pageInfo);
+
+            view.draw(page.getCanvas());
+
+            document.finishPage(page);
+
+            try {
+                Toast.makeText(this, "Saving...", Toast.LENGTH_SHORT).show();
+                document.writeTo(fOut);
+            } catch (IOException e) {
+                Toast.makeText(this, "Failed...", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+
+            document.close();
+
+            /*Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            startActivity(intent);*/
+
+        } else {
+            //..
+        }
+
     }
 }
