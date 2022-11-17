@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class ProfileActivity extends AppCompatActivity {
  private LinearLayout account;
  private TextView username, email;
-
+private ImageView imageLogout,homeImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,20 @@ public class ProfileActivity extends AppCompatActivity {
                 user= (User) intent.getSerializableExtra("user");
                 startActivity(new Intent(ProfileActivity.this, UserDetailsActivity.class)
                         .putExtra("user", (Serializable) user));
+            }
+        });
+        imageLogout=findViewById(R.id.imageLogout);
+        imageLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+            }
+        });
+        homeImage=findViewById(R.id.homeImage);
+        homeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
             }
         });
     }

@@ -3,14 +3,21 @@ package com.example.mobileproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.mobileproject.Entities.User;
 
+import java.io.Serializable;
+
 public class UserDetailsActivity extends AppCompatActivity {
     private TextView firstname, lastname, email, address, phone, username;
-
+    private ImageView homeImage;
+    private LinearLayout profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +42,22 @@ public class UserDetailsActivity extends AppCompatActivity {
         phone.setText(user.getPhone()+"");
         address=findViewById(R.id.address);
         address.setText(user.getAddress());
-
+        //
+        profile = findViewById(R.id.profileBtn);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserDetailsActivity.this, ProfileActivity.class));
+            }
+        });
+        //
+        homeImage=findViewById(R.id.homeImage);
+        homeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserDetailsActivity.this, MainActivity.class));
+            }
+        });
 
     }
 }

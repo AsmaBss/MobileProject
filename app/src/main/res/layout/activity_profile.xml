@@ -372,15 +372,7 @@
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:elevation="3dp"
-            android:src="@drawable/shopping_cart"
-            app:backgroundTint="#ff5e00"
-            app:layout_anchor="@id/app_bar"
-            app:maxImageSize="30dp"
-            app:tint="#ffffff"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

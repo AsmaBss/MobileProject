@@ -3,6 +3,7 @@ package com.example.mobileproject.Adaptor;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +12,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mobileproject.Entities.Produit;
+import com.example.mobileproject.PanierActivity;
 import com.example.mobileproject.R;
 
 import java.util.ArrayList;
 
 public class PanierAdaptor extends RecyclerView.Adapter<PanierAdaptor.ViewHolder>{
     ArrayList<Produit> productDomains;
-
+   // View v;
+    //Intent Store_Total = new Intent(v.getContext(),PanierActivity.class);
+   // float PrixTotal=0;
     public PanierAdaptor(ArrayList<Produit> productDomains) {
         this.productDomains = productDomains;
+        //Store_Total.putExtra("TotalFee",PrixTotal);
     }
     @NonNull
     @Override
@@ -37,6 +42,13 @@ public class PanierAdaptor extends RecyclerView.Adapter<PanierAdaptor.ViewHolder
         holder.prodMarque.setText(productDomains.get(position).getMarque().name());
         holder.prodType.setText(productDomains.get(position).getTypeProduit().name());
         holder.prodFee.setText(String.valueOf(productDomains.get(position).getPrix()));
+        //
+        //PrixTotal=Store_Total.getFloatExtra("TotalFee",PrixTotal)+productDomains.get(position).getPrix();
+        //Store_Total.removeExtra("TotalFee");
+        //Store_Total.putExtra("TotalFee",PrixTotal);
+        ///
+        //System.out.println("Panier Extra Value : "+Store_Total.getFloatExtra("TotalFee",PrixTotal));
+        //
         holder.floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
