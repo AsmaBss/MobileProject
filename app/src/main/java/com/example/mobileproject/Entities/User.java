@@ -18,8 +18,10 @@ public class User implements Serializable {
     private String email;
     @ColumnInfo(name = "password")
     private String password;
-    @ColumnInfo(name = "pic")
-    private String pic;
+    //@ColumnInfo(name = "pic")
+    //private String pic;
+    @ColumnInfo(name = "pic", typeAffinity = ColumnInfo.BLOB)
+    private byte[] pic;
     @ColumnInfo(name = "phone")
     private int phone;
     @ColumnInfo(name = "address")
@@ -33,7 +35,7 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public User(int id, String firstname, String lastname, String email, String password, String pic, int phone, String address) {
+    public User(int id, String firstname, String lastname, String email, String password, byte[] pic, int phone, String address) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -52,6 +54,16 @@ public class User implements Serializable {
         this.phone = phone;
         this.address = address;
         //this.pic = pic;
+    }
+
+    public User(String firstname, String lastname, String email, String password, String address, int phone, byte[] pic) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.address = address;
+        this.pic = pic;
     }
 
     public int getId() {
@@ -94,11 +106,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getPic() {
+    public byte[] getPic() {
         return pic;
     }
 
-    public void setPic(String pic) {
+    public void setPic(byte[] pic) {
         this.pic = pic;
     }
 

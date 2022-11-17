@@ -26,66 +26,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/prodColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="color"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@+id/prodName"
-        app:layout_constraintStart_toStartOf="@+id/prodName"
-        app:layout_constraintTop_toBottomOf="@+id/prodName" />
-
-    <TextView
-        android:id="@+id/prodMarque"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="marque"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@+id/prodColor"
-        app:layout_constraintStart_toStartOf="@+id/prodColor"
-        app:layout_constraintTop_toBottomOf="@+id/prodColor" />
-
-    <TextView
-        android:id="@+id/prodType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="type"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@+id/prodMarque"
-        app:layout_constraintStart_toStartOf="@+id/prodMarque"
-        app:layout_constraintTop_toBottomOf="@+id/prodMarque" />
-
-    <TextView
-        android:id="@+id/prodFee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:shadowColor="#373b54"
-        android:text="0.0"
-        android:textSize="18sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/imageProd"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toTopOf="@+id/addBtn"
-        app:layout_constraintEnd_toStartOf="@+id/dt"
-        app:layout_constraintStart_toStartOf="@+id/prodName"
-        app:layout_constraintTop_toBottomOf="@+id/prodType" />
-
-    <TextView
-        android:id="@+id/dt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DT"
-        android:textColor="@color/orange"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/prodFee"
-        app:layout_constraintEnd_toEndOf="@+id/prodType"
-        app:layout_constraintStart_toEndOf="@+id/prodFee"
-        app:layout_constraintTop_toTopOf="@+id/prodFee" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prodName" />
     <TextView
         android:id="@+id/addBtn"
         android:layout_width="wrap_content"

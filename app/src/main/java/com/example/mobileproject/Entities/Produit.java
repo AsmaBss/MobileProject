@@ -22,8 +22,8 @@ public class Produit implements Serializable {
     private MarqueEnum Marque;
     @ColumnInfo(name = "TypeProduit")
     private TypeProduitEnum TypeProduit;
-    @ColumnInfo(name = "image")
-    private String image;
+    @ColumnInfo(name = "image", typeAffinity = ColumnInfo.BLOB)
+    private byte[] image;
 
     public Produit() {
     }
@@ -38,8 +38,18 @@ public class Produit implements Serializable {
         Marque = marque;
     }
 
-    public Produit(int id, String nom, String description, String couleur, float prix, TypeProduitEnum typeProduit, String image, MarqueEnum marque) {
+    public Produit(int id, String nom, String description, String couleur, float prix, TypeProduitEnum typeProduit, MarqueEnum marque, byte[] image) {
         this.id = id;
+        this.nom = nom;
+        this.description = description;
+        this.couleur = couleur;
+        this.prix = prix;
+        TypeProduit = typeProduit;
+        this.image = image;
+        Marque = marque;
+    }
+
+    public Produit(String nom, String description, String couleur, float prix, TypeProduitEnum typeProduit, MarqueEnum marque, byte[] image) {
         this.nom = nom;
         this.description = description;
         this.couleur = couleur;
@@ -118,11 +128,11 @@ public class Produit implements Serializable {
         TypeProduit = typeProduit;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 

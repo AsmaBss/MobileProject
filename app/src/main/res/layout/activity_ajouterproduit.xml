@@ -46,11 +46,23 @@
                 android:textStyle="bold"
                 android:layout_marginTop="15dp"/>
 
+            <ImageView
+                android:id="@+id/pic"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="20dp"/>
+            <Button
+                android:id="@+id/addImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add image"/>
+
             <EditText
                 android:id="@+id/nom_produit"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginBottom="24dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/forget"
                 android:ems="10"
                 android:hint="Nom du produit"

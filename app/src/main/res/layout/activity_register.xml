@@ -42,6 +42,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                 tools:layout_editor_absoluteX="162dp" />
 
+            <ImageView
+                android:id="@+id/pic"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="20dp"/>
+            <Button
+                android:id="@+id/addImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Image"/>
+
             <EditText
                 android:id="@+id/firstname"
                 android:layout_width="350dp"

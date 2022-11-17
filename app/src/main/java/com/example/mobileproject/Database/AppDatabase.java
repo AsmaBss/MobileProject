@@ -19,7 +19,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ProduitDAO produitDAO();
     public static AppDatabase getAppDatabase(Context context){
         if(instance == null){
-            instance = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "database")
+            instance = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "project_mobile")
                     .allowMainThreadQueries()
                     .build();
         }

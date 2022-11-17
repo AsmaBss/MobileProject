@@ -10,14 +10,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.mobileproject.Entities.DataConvertor;
 import com.example.mobileproject.Entities.User;
 
 import java.io.Serializable;
 
 public class UserDetailsActivity extends AppCompatActivity {
     private TextView firstname, lastname, email, address, phone, username;
-    private ImageView homeImage;
-    private LinearLayout profile;
+    private ImageView imageUser;
+    private LinearLayout homeBtn, profileBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,8 @@ public class UserDetailsActivity extends AppCompatActivity {
 
         username=findViewById(R.id.username);
         username.setText(user.getFirstname() + " " + user.getLastname());
+        imageUser=findViewById(R.id.userImage);
+        imageUser.setImageBitmap(DataConvertor.convertByteArrayToImage(user.getPic()));
 
         firstname=findViewById(R.id.firstname);
         firstname.setText(user.getFirstname());
@@ -43,16 +46,16 @@ public class UserDetailsActivity extends AppCompatActivity {
         address=findViewById(R.id.address);
         address.setText(user.getAddress());
         //
-        profile = findViewById(R.id.profileBtn);
-        profile.setOnClickListener(new View.OnClickListener() {
+        profileBtn = findViewById(R.id.profileBtn);
+        profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserDetailsActivity.this, ProfileActivity.class));
             }
         });
         //
-        homeImage=findViewById(R.id.homeImage);
-        homeImage.setOnClickListener(new View.OnClickListener() {
+        homeBtn=findViewById(R.id.homeBtn);
+        homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserDetailsActivity.this, MainActivity.class));

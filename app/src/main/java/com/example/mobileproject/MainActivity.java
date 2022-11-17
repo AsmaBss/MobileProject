@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,10 +19,12 @@ import com.example.mobileproject.Adaptor.PopularAdaptor;
 import com.example.mobileproject.Database.AppDatabase;
 import com.example.mobileproject.Domain.CategoryDomain;
 import com.example.mobileproject.Domain.ProductDomain;
+import com.example.mobileproject.Entities.DataConvertor;
 import com.example.mobileproject.Entities.Marque;
 import com.example.mobileproject.Entities.MarqueEnum;
 import com.example.mobileproject.Entities.Produit;
 import com.example.mobileproject.Entities.User;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -34,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     private ConstraintLayout nav_ajouterproduit;
     private TextView user_label;
+    private ImageView pic;
     private LinearLayout profile;
+    private FloatingActionButton panier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
         user= (User) intent.getSerializableExtra("user");
         user_label.setText("Welcome "+user.getFirstname()+" "+user.getLastname());
 
+        pic=findViewById(R.id.imageView3);
+        pic.setImageBitmap(DataConvertor.convertByteArrayToImage(user.getPic()));
+
         nav_ajouterproduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
                         .putExtra("user", (Serializable) user));
             }
         });
+
+        panier = findViewById(R.id.panier);
+        panier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, PanierActivity.class));
+            }
+        });
     }
 
     private void recyclerViewCategory(){
@@ -78,11 +94,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<Marque> category = new ArrayList<>();
-        category.add(new Marque(1, MarqueEnum.MARQUE1, "cat_1"));
-        category.add(new Marque(2, MarqueEnum.MARQUE2, "cat_2"));
-        category.add(new Marque(3, MarqueEnum.MARQUE3, "cat_3"));
-        category.add(new Marque(4, MarqueEnum.MARQUE4, "cat_4"));
-        category.add(new Marque(5, MarqueEnum.MARQUE5, "cat_5"));
+        category.add(new Marque(1, MarqueEnum.Cheese, "cat_1"));
+        category.add(new Marque(2, MarqueEnum.Meat, "cat_2"));
+        category.add(new Marque(3, MarqueEnum.Mergez, "cat_3"));
+        category.add(new Marque(4, MarqueEnum.Coke, "cat_4"));
+        category.add(new Marque(5, MarqueEnum.Frite, "cat_5"));
         adapterCategory = new MarqueAdaptor(category);
         recyclerViewCategoryList.setAdapter(adapterCategory);
     }
@@ -95,14 +111,8 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Produit> produits = new ArrayList<>();
         produits = (ArrayList<Produit>) database.produitDAO().getAll();
         System.out.println("--------------------------------------------------------------------------- " + database.produitDAO().getAll());
-        //ArrayList<ProductDomain> products = new ArrayList<>();
-        /*products.add(new ProductDomain("prod1","cat_2","prod1", 1.0));
-        products.add(new ProductDomain("prod2","cat_2","prod2", 1.0));
-        products.add(new ProductDomain("prod3","cat_2","prod3", 3.0));*/
         adapterPopular=new PopularAdaptor(produits);
         recyclerViewPopularList.setAdapter(adapterPopular);
-
-
 
     }
 }

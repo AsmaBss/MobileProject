@@ -74,8 +74,8 @@ public class PanierActivity extends AppCompatActivity {
         Total=findViewById(R.id.Total);
         //
         ArrayList<Produit> produitspanier = new ArrayList<>();
-        produitspanier.add(new Produit("testernom","testeurdescription","bleu",(float)18, TypeProduitEnum.TYPE1,MarqueEnum.MARQUE2));
-        produitspanier.add(new Produit("testernom2","testeurdescription2","red",(float)22, TypeProduitEnum.TYPE2,MarqueEnum.MARQUE3));
+        produitspanier.add(new Produit("testernom","testeurdescription","bleu",(float)18, TypeProduitEnum.TYPE1,MarqueEnum.Meat));
+        produitspanier.add(new Produit("testernom2","testeurdescription2","red",(float)22, TypeProduitEnum.TYPE2,MarqueEnum.Mergez));
         for (Produit P:produitspanier) {
             PrixTot=PrixTot+P.getPrix();
         }
@@ -113,6 +113,7 @@ public class PanierActivity extends AppCompatActivity {
             try {
                 Toast.makeText(this, "Saving...", Toast.LENGTH_SHORT).show();
                 document.writeTo(fOut);
+                startActivity(new Intent(PanierActivity.this, OrdercompleteActivity.class));
             } catch (IOException e) {
                 Toast.makeText(this, "Failed...", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();

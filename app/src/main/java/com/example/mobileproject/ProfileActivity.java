@@ -9,14 +9,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.mobileproject.Entities.DataConvertor;
 import com.example.mobileproject.Entities.User;
 
 import java.io.Serializable;
 
 public class ProfileActivity extends AppCompatActivity {
- private LinearLayout account;
- private TextView username, email;
-private ImageView imageLogout,homeImage;
+    private LinearLayout account, logout;
+    private TextView username, email;
+    private ImageView imageLogout,homeImage, imageUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,8 @@ private ImageView imageLogout,homeImage;
         username.setText(user.getFirstname() + " " + user.getLastname());
         email=findViewById(R.id.emailUser);
         email.setText(user.getEmail());
+        imageUser=findViewById(R.id.imageUser);
+        imageUser.setImageBitmap(DataConvertor.convertByteArrayToImage(user.getPic()));
 
         account=findViewById(R.id.account);
         account.setOnClickListener(new View.OnClickListener() {
@@ -41,8 +45,8 @@ private ImageView imageLogout,homeImage;
                         .putExtra("user", (Serializable) user));
             }
         });
-        imageLogout=findViewById(R.id.imageLogout);
-        imageLogout.setOnClickListener(new View.OnClickListener() {
+        logout=findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ProfileActivity.this, LoginActivity.class));

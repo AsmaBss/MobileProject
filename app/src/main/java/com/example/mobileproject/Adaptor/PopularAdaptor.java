@@ -3,6 +3,7 @@ package com.example.mobileproject.Adaptor;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -18,13 +19,17 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.mobileproject.DetailProduitActivity;
 import com.example.mobileproject.Domain.CategoryDomain;
 import com.example.mobileproject.Domain.ProductDomain;
+import com.example.mobileproject.Entities.DataConvertor;
 import com.example.mobileproject.Entities.Produit;
 import com.example.mobileproject.MainActivity;
 import com.example.mobileproject.PanierActivity;
 import com.example.mobileproject.R;
 import com.example.mobileproject.RegisterActivity;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHolder> {
@@ -46,11 +51,8 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.prodName.setText(produits.get(position).getNom());
-        holder.prodColor.setText("Couleur: " + produits.get(position).getCouleur());
-        holder.prodMarque.setText("Marque: " + produits.get(position).getMarque().name());
-        holder.prodType.setText("Type: " + produits.get(position).getTypeProduit().name());
-        holder.prodFee.setText(String.valueOf(produits.get(position).getPrix()));
-        holder.addBtn.setText("add Item : "+String.valueOf(produits.get(position).getId()));
+        holder.imageProd.setImageBitmap(DataConvertor.convertByteArrayToImage(produits.get(position).getImage()));
+        holder.addBtn.setText("add item"); //+String.valueOf(produits.get(position).getId())
         holder.addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +63,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
             }
         });
         //
-        holder.Supprimerbtn.setText("- Supprimer : ");
+        holder.Supprimerbtn.setText("delete item");
         holder.Supprimerbtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -96,23 +98,30 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
         return produits.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView prodName;
-        TextView prodColor;
-        TextView prodMarque;
-        TextView prodType;
-        TextView prodFee;
         TextView addBtn;
         TextView Supprimerbtn;
+        ImageView imageProd;
+        private final Context context;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            context = itemView.getContext();
             prodName=itemView.findViewById(R.id.prodName);
-            prodColor=itemView.findViewById(R.id.prodColor);
-            prodMarque=itemView.findViewById(R.id.prodMarque);
-            prodType=itemView.findViewById(R.id.prodType);
-            prodFee=itemView.findViewById(R.id.prodFee);
+            imageProd=itemView.findViewById(R.id.imageProd);
             addBtn=itemView.findViewById(R.id.addBtn);
             Supprimerbtn=itemView.findViewById(R.id.Supprimerbtn);
+            itemView.setClickable(true);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Produit produit = produits.get(getAdapterPosition());
+            //Toast.makeText(context,"The Item Clicked is: "+ getAdapterPosition(),Toast.LENGTH_SHORT).show();
+            final Intent intent = new Intent(context, DetailProduitActivity.class);
+            context.startActivity(intent.putExtra("produit", (Serializable) produit));
         }
     }
 

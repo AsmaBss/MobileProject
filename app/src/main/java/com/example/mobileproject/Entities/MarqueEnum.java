@@ -1,11 +1,11 @@
 package com.example.mobileproject.Entities;
 
 public enum MarqueEnum {
-    MARQUE1("Cheese"),
-    MARQUE2("Meat"),
-    MARQUE3("Mergez"),
-    MARQUE4("Coke"),
-    MARQUE5("Frite");
+    Cheese("Cheese"),
+    Meat("Meat"),
+    Mergez("Mergez"),
+    Coke("Coke"),
+    Frite("Frite");
 
     private String friendlyName;
 
